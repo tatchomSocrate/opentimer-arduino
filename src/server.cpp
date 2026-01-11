@@ -15,8 +15,8 @@
 
 // Same as SERIAL_READ_BYTE but checks buffer size before reading
 #define SERIAL_READ_BYTE_S(x)                                                  \
-  if (size == 0)                                                               \
-    goto end;                                                                  \
+  if (size == 0) goto end;                                                     \
+  if (Serial.available() == 0) goto end;                                     \
   SERIAL_READ_BYTE(x)
 
 // Read expected size "x" and validate remaining bytes in request
