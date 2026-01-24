@@ -27,7 +27,7 @@ struct Alarm {
   byte hour;      // Hour of the alarm (0–23)
   byte minute;    // Minute of the alarm (0–59)
   byte duration;  // Duration of the alarm (in seconds)
-  byte days;      // Bitmask representing active days and state (e.g., 0b0111110 for Sun-Mon–Tue-Wed-Thu-Fri-Sat-State)
+  byte days;      // Bitmask representing active days and state (e.g., 0b11111111 for Sun-Mon–Tue-Wed-Thu-Fri-Sat-State)
 };
 
 // ============================================================================
@@ -61,7 +61,7 @@ struct EEPROMData {
   // Effective length of the author name
   byte authorLength;
 
-  // Program or device state (application-specific)
+  // timer state(enable/disable)
   byte state;
 };
 

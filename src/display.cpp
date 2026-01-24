@@ -34,7 +34,7 @@ void initHome() {
   lcd.print(secondNow / 10);
   lcd.print(secondNow % 10);
 
-  // Display system state (ON/OFF) and temperatureNow
+  // Display timer state (enable/disable) and temperatureNow
   lcd.print(' ');
   lcd.write(eeprom.state ? ON_CHAR : OFF_CHAR);
   lcd.print(' ');

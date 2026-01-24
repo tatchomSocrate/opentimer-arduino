@@ -82,19 +82,19 @@ void checkAndTriggerAlarm() {
 // ------------------------ 7-segment display ------------------------
 void onSevenSegmentDisplayToggle() {
   firstDigit = !firstDigit;
-  PORTD |= (1 << DIGIT1 | 1 << DIGIT2); // Enable both digits
+  PORTD |= (1 << DIGIT1 | 1 << DIGIT2); // disable both digits
   PORTD &= ~ABCD;                       // Clear BCD lines
 
   if (firstDigit) {
     PORTD |= bcd[duration / 10];           // Tens digit
-    PORTD &= ~(1 << DIGIT1);
+    PORTD &= ~(1 << DIGIT1);               // enable tens digit
   } else {
     PORTD |= bcd[duration % 10];           // Units digit
-    PORTD &= ~(1 << DIGIT2);
+    PORTD &= ~(1 << DIGIT2);               // enable units digit
   }
 }
 
-// ------------------------ Relay initialization ------------------------
+// ------------------------ Relay initialization for program types PRGII(1) ------------------------
 void initRelay() {
   if (eeprom.alarmCount == 0) return;
 
@@ -124,7 +124,7 @@ void everySecond() {
     checkAndTriggerAlarm();
   }
 
-  // Program type 0: countdown mode
+  // Program type PRGI(0): countdown mode
   if (eeprom.programType == 0) {
     if (duration == 0) {
       digitalWrite(RELAY, HIGH);

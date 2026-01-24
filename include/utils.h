@@ -7,7 +7,7 @@
 #define DOWN_BTN A1
 #define UP_BTN A2
 
-#define MSG_DELAY 2000 // Message display duration
+#define MSG_DELAY 2000 // Message display duration in seconds
 #define DEBOUNCE 300   // 300 ms delay to eliminate button bounce effects
 
 #define BUZZER 8
@@ -24,7 +24,7 @@
 #define C PD4
 #define D PD6
 
-#define LOCK_TIME 20 // Display unlock duration
+#define LOCK_TIME 20 // Display unlock duration in seconds
 
 void readBtns();
 boolean isPressed(uint8_t btn);

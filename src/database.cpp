@@ -128,7 +128,7 @@ void getAuthor() {
 }
 
 // -----------------------------------------------------------------------------
-// Store system state to EEPROM
+// Store timer state to EEPROM
 // -----------------------------------------------------------------------------
 void storeState() {
   if (eeprom.state)
@@ -138,7 +138,7 @@ void storeState() {
 }
 
 // -----------------------------------------------------------------------------
-// Load system state from EEPROM
+// Load timer state from EEPROM
 // -----------------------------------------------------------------------------
 void getState() {
   byte count = 0, b = EEPROM.read(STATE_ADR);

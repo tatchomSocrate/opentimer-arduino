@@ -54,6 +54,6 @@ void getAlarms();   // load the alarms from ALARMS_ADDR into the eeprom variable
 void getPassword(); // load the password from PASSWORD_ADDR into the eeprom variable
 void getDescription(); // load the description from DESCRIPTION_ADDR into the eeprom variable
 void getAuthor();      // load the author's name from AUTHOR_ADR into the eeprom variable
-void getState();       // load the state into the eeprom variable
+void getState();       // load the timer state(enable/disable) into the eeprom variable
 
 #endif

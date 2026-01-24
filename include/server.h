@@ -7,7 +7,7 @@
 // F_CPU = 16 MHz, Prescaler = 64, frequency = 1000 Hz (0.001 seconds)
 
 #define DISPLAY_COUNT 249 // For 7-segment(1ms period toggle) 
-#define TIMEOUT_COUNT 2000
+#define TIMEOUT_COUNT 2000 // 2s request timeout
 
 // ============================================================================
 //   Request Codes for Bluetooth Communication
@@ -48,7 +48,7 @@ enum RequestCodes {
     BAD_REQUEST,         // Invalid request
     TIMEOUT,             // Communication timeout
     SET_PROGRAM_TYPE,    // Set program type
-    GET_PROGRAM_TYPE,    // Get program type
+    GET_PROGRAM_TYPE,    // Request program type
     DISCONNECTED,        // Client disconnected
     ERROR                // General error
 };
